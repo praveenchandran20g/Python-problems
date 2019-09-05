@@ -1,6 +1,6 @@
-n=input('Enter the string')
-l=n.split('=')
-m=l[0].split('+')
+MString=input('Enter the string')
+string1=MString.split('=')
+string2=string1[0].split('+')
 def grade(ans,comp):
     i,j=0,0
     complement=''
@@ -22,27 +22,25 @@ def grade(ans,comp):
 complement=''
 flag=0
 listed=[]
-listed.append(m[0])
-listed.append(m[1])
-listed.append(l[1])
+listed.append(string2[0])
+listed.append(string2[1])
+listed.append(string1[1])
 for sa in range(0,3):
     for sad in listed[sa]:
         if sad=='w':
             flag=sa
 if flag==0:
-    li=list(m[0].split('water'))
+    li=list(string2[0].split('water'))
     comp=li[0]+li[1]
-    ans=str(int(l[1])-int(m[1]))
+    ans=str(int(string1[1])-int(string2[1]))
     grade(ans,comp)
 elif flag==1:
     li = list(m[1].split('water'))
     comp = li[0] + li[1]
-    ans = str(int(l[1]) - int(m[0]))
+    ans = str(int(string1[1]) - int(string2[0]))
     grade(ans, comp)
 elif flag==2:
-    li = list(l[1].split('water'))
+    li = list(string1[1].split('water'))
     comp = li[0] + li[1]
-    ans = str(int(m[0]) + int(m[1]))
+    ans = str(int(string2[0]) + int(string2[1]))
     grade(ans, comp)
-
-
